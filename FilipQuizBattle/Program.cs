@@ -1,5 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using FilipQuizBattle.Logging;
+using FilipQuizBattle.Repository;
+using FilipQuizBattle.Services;
 
-using System;
+class Program
+{
+    static void Main()
+    {
+        IQuestionRepository repo = new InMemoryQuestionRepository();
+        ILogger logger = new ConsoleLogger();
+        
+        var service = new QuestionService(repo, logger);
 
-Console.WriteLine("Hello, World!");
+        service.AskNextQuestion();
+    }
+}

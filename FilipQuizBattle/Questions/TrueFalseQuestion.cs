@@ -13,7 +13,7 @@ public class TrueFalseQuestion : IQuestion
         QuestionText = text;
         CorrectAnswer = correct;
     }
-    public void Displat()
+    public void Display()
     {
         Console.WriteLine(QuestionText + " (True/False)");
     }
